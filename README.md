@@ -74,35 +74,9 @@ flowchart TD
     M -.-> K
 ```
 
-El diagrama completo en alta resolución está en [`pipeline.svg`](pipeline.svg).
-
 ---
 
-## 6. Reproducibilidad
-
-```bash
-git clone https://github.com/<usuario>/alertaedu.git
-cd alertaedu
-python -m venv .venv && source .venv/bin/activate    # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-Ejecución del pipeline de extremo a extremo:
-
-```bash
-python -m src.ingest      --config config/base_simulada.yaml
-python -m src.quality     --input data/raw/05_educacion_desempeno_academico.csv
-python -m src.clean
-python -m src.features
-python -m src.train       --model all --seed 42
-python -m src.evaluate    --report reports/evaluacion.md
-```
-
-Todos los procesos usan semilla fija (`SEED = 42`) y registran su configuración en `reports/`. Los notebooks son de exploración; **la lógica que alimenta resultados reportables vive en `src/`**, no en celdas sueltas.
-
----
-
-## 7. Convenciones de trabajo
+## 6. Convenciones de trabajo
 
 **Ramas**
 
@@ -125,7 +99,7 @@ Ningún cambio entra a `main` sin revisión de pares (*pull request*) por parte 
 
 ---
 
-## 8. Cronograma (semanas 5 a 14)
+## 7. Cronograma (semanas 5 a 14)
 
 | Semanas | Fase | Hito |
 |---|---|---|
@@ -137,7 +111,7 @@ Ningún cambio entra a `main` sin revisión de pares (*pull request*) por parte 
 
 ---
 
-## 9. Consideraciones éticas
+## 8. Consideraciones éticas
 
 El proyecto trabaja sobre un dominio sensible: la clasificación de menores de edad según su probabilidad de abandonar el sistema educativo. El equipo asume los siguientes compromisos.
 
@@ -152,7 +126,7 @@ La Meta 9.b promueve el desarrollo de tecnología, investigación e innovación 
 
 ---
 
-## 10. Equipo
+## 9. Equipo
 
 | Integrante | Rol principal | Responsabilidades |
 |---|---|---|
@@ -162,7 +136,7 @@ La Meta 9.b promueve el desarrollo de tecnología, investigación e innovación 
 
 ---
 
-## 11. Referencias
+## 10. Referencias
 
 - Cortez, P., & Silva, A. M. (2008). *Using data mining to predict secondary school student performance*. En A. Brito & J. Teixeira (Eds.), *Proceedings of the 5th Annual Future Business Technology Conference* (pp. 5–12). EUROSIS.
 - Chapman, P., Clinton, J., Kerber, R., Khabaza, T., Reinartz, T., Shearer, C., & Wirth, R. (2000). *CRISP-DM 1.0: Step-by-step data mining guide*. SPSS Inc.
