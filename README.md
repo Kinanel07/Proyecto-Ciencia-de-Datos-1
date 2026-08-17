@@ -74,7 +74,7 @@ flowchart TD
     M -.-> K
 ```
 
-El diagrama completo en alta resolución está en [`docs/pipeline.svg`](docs/pipeline.svg).
+El diagrama completo en alta resolución está en [`pipeline.svg`](pipeline.svg).
 
 ---
 
