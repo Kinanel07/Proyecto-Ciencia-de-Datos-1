@@ -1,6 +1,6 @@
 # AlertaEdu — Identificación temprana del riesgo de deserción escolar mediante Ciencia de Datos
 
-Proyecto académico de Ciencia de Datos Aplicada · Universidad de La Sabana · 2026
+Proyecto académico de Ciencia de Datos Aplicada · 2026
 
 **Estado del proyecto:** Fase 1 completada (formulación y plan de trabajo) · Fase 2 en curso (análisis exploratorio)
 **Metodología:** CRISP-DM · **Lenguaje:** Python 3.11 · **ODS asociado:** ODS 9, Meta 9.b
@@ -40,42 +40,7 @@ Formular, entrenar y evaluar modelos de clasificación supervisada con métricas
 
 ---
 
-## 4. Estructura del repositorio
-
-```
-alertaedu/
-├── data/
-│   ├── raw/                 # Fuentes originales, inmutables (NO versionadas)
-│   ├── processed/           # Datasets limpios generados por los scripts
-│   └── external/            # Diccionarios y catálogos de referencia
-├── notebooks/
-│   ├── 01_auditoria_calidad.ipynb
-│   ├── 02_eda_base_principal.ipynb
-│   ├── 03_eda_fuentes_complementarias.ipynb
-│   └── 04_modelado_experimental.ipynb
-├── src/
-│   ├── ingest.py            # Lectura y validación de esquema
-│   ├── quality.py           # Auditoría de calidad de datos
-│   ├── clean.py             # Limpieza y estandarización
-│   ├── features.py          # Ingeniería y selección de variables
-│   ├── train.py             # Entrenamiento y validación cruzada
-│   └── evaluate.py          # Métricas de desempeño y de equidad
-├── docs/
-│   ├── bitacoras/           # Bitácoras de error por corte
-│   ├── diccionario_datos.md # Diccionario de variables
-│   ├── canvas_proyecto.pdf  # Canvas del kick-off
-│   └── pipeline.svg         # Diagrama de arquitectura analítica
-├── reports/
-│   ├── entregable_1.pdf
-│   └── figures/
-├── requirements.txt
-├── .gitignore
-└── README.md
-```
-
----
-
-## 5. Fuentes de datos
+## 4. Fuentes de datos
 
 | Fuente | Rol | Contexto | Uso en el proyecto |
 |---|---|---|---|
@@ -89,7 +54,7 @@ Los microdatos originales **no se versionan en este repositorio**. La carpeta `d
 
 ---
 
-## 6. Arquitectura del pipeline
+## 5. Arquitectura del pipeline
 
 ```mermaid
 flowchart TD
@@ -113,7 +78,7 @@ El diagrama completo en alta resolución está en [`docs/pipeline.svg`](docs/pip
 
 ---
 
-## 7. Reproducibilidad
+## 6. Reproducibilidad
 
 ```bash
 git clone https://github.com/<usuario>/alertaedu.git
@@ -137,7 +102,7 @@ Todos los procesos usan semilla fija (`SEED = 42`) y registran su configuración
 
 ---
 
-## 8. Convenciones de trabajo
+## 7. Convenciones de trabajo
 
 **Ramas**
 
@@ -160,7 +125,7 @@ Ningún cambio entra a `main` sin revisión de pares (*pull request*) por parte 
 
 ---
 
-## 9. Cronograma (semanas 5 a 14)
+## 8. Cronograma (semanas 5 a 14)
 
 | Semanas | Fase | Hito |
 |---|---|---|
@@ -172,7 +137,7 @@ Ningún cambio entra a `main` sin revisión de pares (*pull request*) por parte 
 
 ---
 
-## 10. Consideraciones éticas
+## 9. Consideraciones éticas
 
 El proyecto trabaja sobre un dominio sensible: la clasificación de menores de edad según su probabilidad de abandonar el sistema educativo. El equipo asume los siguientes compromisos.
 
@@ -187,17 +152,17 @@ La Meta 9.b promueve el desarrollo de tecnología, investigación e innovación 
 
 ---
 
-## 11. Equipo
+## 10. Equipo
 
 | Integrante | Rol principal | Responsabilidades |
 |---|---|---|
-| Joel Montenegro | Ingeniería y gestión de datos | Auditoría de calidad, limpieza, EDA, documentación del pipeline |
-| Kinan El Halabi | Modelamiento y analítica | Entrenamiento, validación, comparación de algoritmos, interpretación |
+| Joel | Ingeniería y gestión de datos | Auditoría de calidad, limpieza, EDA, documentación del pipeline |
+| Kinan | Modelamiento y analítica | Entrenamiento, validación, comparación de algoritmos, interpretación |
 | Ambos | Trabajo colaborativo | Reflexión ética, documentación, informe final y presentación |
 
 ---
 
-## 12. Referencias
+## 11. Referencias
 
 - Cortez, P., & Silva, A. M. (2008). *Using data mining to predict secondary school student performance*. En A. Brito & J. Teixeira (Eds.), *Proceedings of the 5th Annual Future Business Technology Conference* (pp. 5–12). EUROSIS.
 - Chapman, P., Clinton, J., Kerber, R., Khabaza, T., Reinartz, T., Shearer, C., & Wirth, R. (2000). *CRISP-DM 1.0: Step-by-step data mining guide*. SPSS Inc.
@@ -206,9 +171,3 @@ La Meta 9.b promueve el desarrollo de tecnología, investigación e innovación 
 - Provost, F., & Fawcett, T. (2013). *Data science for business*. O'Reilly Media.
 - Realinho, V., Machado, J., Baptista, L., & Martins, M. V. (2022). Predicting student dropout and academic success. *Data, 7*(11), 146.
 - Shmueli, G. (2010). To explain or to predict? *Statistical Science, 25*(3), 289–310.
-
----
-
-## Licencia
-
-Material académico desarrollado con fines formativos en el marco de la asignatura de Ciencia de Datos Aplicada de la Universidad de La Sabana. El uso de las fuentes de datos externas se rige por las condiciones de sus respectivos proveedores.
