@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 1290" width="920" height="1290" font-family="Segoe UI, Calibri, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0B2C6B"/>
+    </marker>
+    <marker id="arrowDash" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7A8AA6"/>
+    </marker>
+    <marker id="arrowBack" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#B8862B"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="920" height="1290" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="40" y="42" font-size="21" font-weight="700" fill="#0B2C6B">Arquitectura del pipeline analítico — AlertaEdu</text>
+  <text x="40" y="64" font-size="12.5" fill="#5A6B85">Identificación temprana del riesgo de deserción escolar · Entregable 1 · Universidad de La Sabana</text>
+  <line x1="40" y1="78" x2="880" y2="78" stroke="#0B2C6B" stroke-width="2"/>
+
+  <!-- Column headers -->
+  <text x="40" y="106" font-size="11.5" font-weight="700" fill="#0B2C6B" letter-spacing="1">VÍA PRINCIPAL — ENTRENAMIENTO DEL MODELO</text>
+  <text x="608" y="106" font-size="11.5" font-weight="700" fill="#7A8AA6" letter-spacing="1">VÍA COMPLEMENTARIA</text>
+
+  <!-- ============ MAIN TRACK ============ -->
+  <!-- S1 Fuente principal -->
+  <rect x="40" y="118" width="530" height="66" rx="6" fill="#0B2C6B"/>
+  <text x="56" y="142" font-size="14" font-weight="700" fill="#FFFFFF">1 · Fuente principal</text>
+  <text x="56" y="161" font-size="11.5" fill="#D6DEEC">Base simulada de educación secundaria — 7.575 registros, 13 variables</text>
+  <text x="56" y="176" font-size="11.5" fill="#D6DEEC">Variable objetivo: deserción (≈8,5 % de casos positivos)</text>
+  <line x1="305" y1="184" x2="305" y2="204" stroke="#0B2C6B" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- S2 -->
+  <rect x="40" y="206" width="530" height="56" rx="6" fill="#EEF2F8" stroke="#0B2C6B" stroke-width="1.2"/>
+  <text x="56" y="228" font-size="13.5" font-weight="700" fill="#0B2C6B">2 · Ingesta y validación de esquema</text>
+  <text x="56" y="248" font-size="11.5" fill="#33455F">Lectura CSV/Parquet · verificación de tipos y cardinalidad · capa <tspan font-style="italic">raw</tspan> inmutable</text>
+  <line x1="305" y1="262" x2="305" y2="282" stroke="#0B2C6B" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- S3 -->
+  <rect x="40" y="284" width="530" height="56" rx="6" fill="#EEF2F8" stroke="#0B2C6B" stroke-width="1.2"/>
+  <text x="56" y="306" font-size="13.5" font-weight="700" fill="#0B2C6B">3 · Auditoría de calidad de datos</text>
+  <text x="56" y="326" font-size="11.5" fill="#33455F">Faltantes · duplicados · inconsistencias categóricas · atípicos · desbalance de clases</text>
+  <line x1="305" y1="340" x2="305" y2="360" stroke="#0B2C6B" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- S4 -->
+  <rect x="40" y="362" width="530" height="56" rx="6" fill="#EEF2F8" stroke="#0B2C6B" stroke-width="1.2"/>
+  <text x="56" y="384" font-size="13.5" font-weight="700" fill="#0B2C6B">4 · Limpieza y estandarización</text>
+  <text x="56" y="404" font-size="11.5" fill="#33455F">Imputación documentada · normalización de categorías · codificación → capa <tspan font-style="italic">processed</tspan></text>
+  <line x1="305" y1="418" x2="305" y2="438" stroke="#0B2C6B" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- S5 EDA -->
+  <rect x="40" y="440" width="530" height="56" rx="6" fill="#EEF2F8" stroke="#0B2C6B" stroke-width="1.2"/>
+  <text x="56" y="462" font-size="13.5" font-weight="700" fill="#0B2C6B">5 · Análisis exploratorio (EDA)</text>
+  <text x="56" y="482" font-size="11.5" fill="#33455F">Distribuciones · asociaciones bivariadas · formulación de hipótesis verificables</text>
+  <line x1="305" y1="496" x2="305" y2="516" stroke="#0B2C6B" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- S6 -->
+  <rect x="40" y="518" width="530" height="62" rx="6" fill="#EEF2F8" stroke="#0B2C6B" stroke-width="1.2"/>
+  <text x="56" y="540" font-size="13.5" font-weight="700" fill="#0B2C6B">6 · Ingeniería y selección de variables</text>
+  <text x="56" y="558" font-size="11.5" fill="#33455F">Índices derivados (asistencia acumulada, razón de fallas, rendimiento)</text>
+  <text x="56" y="573" font-size="11.5" fill="#8C1D1D" font-weight="600">Restricción temporal: solo información del primer tercio del año lectivo</text>
+  <line x1="305" y1="580" x2="305" y2="600" stroke="#0B2C6B" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- S7 -->
+  <rect x="40" y="602" width="530" height="62" rx="6" fill="#EEF2F8" stroke="#0B2C6B" stroke-width="1.2"/>
+  <text x="56" y="624" font-size="13.5" font-weight="700" fill="#0B2C6B">7 · Partición estratificada y balanceo</text>
+  <text x="56" y="642" font-size="11.5" fill="#33455F">Train / validación / prueba 70–15–15 estratificado por la clase minoritaria</text>
+  <text x="56" y="657" font-size="11.5" fill="#8C1D1D" font-weight="600">SMOTE o ponderación de clases solo dentro del conjunto de entrenamiento</text>
+  <line x1="305" y1="664" x2="305" y2="684" stroke="#0B2C6B" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- S8 -->
+  <rect x="40" y="686" width="530" height="86" rx="6" fill="#DCE5F2" stroke="#0B2C6B" stroke-width="1.6"/>
+  <text x="56" y="708" font-size="13.5" font-weight="700" fill="#0B2C6B">8 · Entrenamiento escalonado por complejidad creciente</text>
+  <rect x="56" y="718" width="158" height="42" rx="4" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="1"/>
+  <text x="135" y="735" font-size="11" font-weight="700" fill="#0B2C6B" text-anchor="middle">Regresión logística</text>
+  <text x="135" y="750" font-size="10.5" fill="#5A6B85" text-anchor="middle">línea base interpretable</text>
+  <rect x="226" y="718" width="158" height="42" rx="4" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="1"/>
+  <text x="305" y="735" font-size="11" font-weight="700" fill="#0B2C6B" text-anchor="middle">Random Forest</text>
+  <text x="305" y="750" font-size="10.5" fill="#5A6B85" text-anchor="middle">no linealidad e interacciones</text>
+  <rect x="396" y="718" width="158" height="42" rx="4" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="1"/>
+  <text x="475" y="735" font-size="11" font-weight="700" fill="#0B2C6B" text-anchor="middle">Gradient Boosting</text>
+  <text x="475" y="750" font-size="10.5" fill="#5A6B85" text-anchor="middle">XGBoost / LightGBM</text>
+  <line x1="214" y1="739" x2="224" y2="739" stroke="#0B2C6B" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="384" y1="739" x2="394" y2="739" stroke="#0B2C6B" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="305" y1="772" x2="305" y2="792" stroke="#0B2C6B" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- S9 -->
+  <rect x="40" y="794" width="530" height="62" rx="6" fill="#EEF2F8" stroke="#0B2C6B" stroke-width="1.2"/>
+  <text x="56" y="816" font-size="13.5" font-weight="700" fill="#0B2C6B">9 · Validación cruzada y calibración del umbral</text>
+  <text x="56" y="834" font-size="11.5" fill="#33455F">Validación cruzada estratificada (k = 5) · ajuste de hiperparámetros</text>
+  <text x="56" y="849" font-size="11.5" fill="#33455F">Umbral fijado según la capacidad real de acompañamiento de la institución</text>
+  <line x1="305" y1="856" x2="305" y2="876" stroke="#0B2C6B" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- S10 -->
+  <rect x="40" y="878" width="530" height="80" rx="6" fill="#DCE5F2" stroke="#0B2C6B" stroke-width="1.6"/>
+  <text x="56" y="900" font-size="13.5" font-weight="700" fill="#0B2C6B">10 · Evaluación dual sobre el conjunto de prueba</text>
+  <rect x="56" y="910" width="243" height="38" rx="4" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="1"/>
+  <text x="177" y="926" font-size="11" font-weight="700" fill="#0B2C6B" text-anchor="middle">Desempeño</text>
+  <text x="177" y="940" font-size="10.5" fill="#5A6B85" text-anchor="middle">Recall · PR-AUC · F1 · ROC-AUC</text>
+  <rect x="311" y="910" width="243" height="38" rx="4" fill="#FFFFFF" stroke="#8C1D1D" stroke-width="1"/>
+  <text x="432" y="926" font-size="11" font-weight="700" fill="#8C1D1D" text-anchor="middle">Equidad algorítmica</text>
+  <text x="432" y="940" font-size="10.5" fill="#8C1D1D" text-anchor="middle">tasa de falsos negativos por subgrupo</text>
+  <line x1="305" y1="958" x2="305" y2="978" stroke="#0B2C6B" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- S11 -->
+  <rect x="40" y="980" width="530" height="56" rx="6" fill="#EEF2F8" stroke="#0B2C6B" stroke-width="1.2"/>
+  <text x="56" y="1002" font-size="13.5" font-weight="700" fill="#0B2C6B">11 · Interpretación de resultados</text>
+  <text x="56" y="1022" font-size="11.5" fill="#33455F">Coeficientes y valores SHAP · lectura de factores en clave pedagógica, no causal</text>
+  <line x1="305" y1="1036" x2="305" y2="1056" stroke="#0B2C6B" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- S12 -->
+  <rect x="40" y="1058" width="530" height="72" rx="6" fill="#0B2C6B"/>
+  <text x="56" y="1080" font-size="14" font-weight="700" fill="#FFFFFF">12 · Salida y uso institucional</text>
+  <text x="56" y="1099" font-size="11.5" fill="#D6DEEC">Score de riesgo · tablero de alerta temprana · recomendaciones de acompañamiento</text>
+  <text x="56" y="1117" font-size="11.5" font-weight="700" fill="#F2C14E">Compuerta ética: toda alerta pasa por revisión humana antes de intervenir</text>
+
+  <!-- Feedback loop -->
+  <path d="M 40 918 L 18 918 L 18 549 L 38 549" fill="none" stroke="#B8862B" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#arrowBack)"/>
+  <text x="30" y="740" font-size="10.5" font-weight="600" fill="#B8862B" transform="rotate(-90 30 740)" text-anchor="middle">Iteración CRISP-DM: reingeniería de variables</text>
+
+  <!-- ============ COMPLEMENTARY TRACK ============ -->
+  <rect x="608" y="118" width="272" height="66" rx="6" fill="#F4F6FA" stroke="#7A8AA6" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="624" y="140" font-size="12.5" font-weight="700" fill="#4A5B75">ICFES Saber 11 · 2020-2</text>
+  <text x="624" y="158" font-size="11" fill="#5A6B85">Contexto socioeconómico y familiar</text>
+  <text x="624" y="173" font-size="11" fill="#5A6B85">a gran escala (Colombia)</text>
+
+  <rect x="608" y="196" width="272" height="66" rx="6" fill="#F4F6FA" stroke="#7A8AA6" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="624" y="218" font-size="12.5" font-weight="700" fill="#4A5B75">UCI Dropout &amp; Academic Success</text>
+  <text x="624" y="236" font-size="11" fill="#5A6B85">Referencia metodológica sobre</text>
+  <text x="624" y="251" font-size="11" fill="#5A6B85">factores de abandono (Portugal)</text>
+
+  <line x1="744" y1="262" x2="744" y2="282" stroke="#7A8AA6" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#arrowDash)"/>
+
+  <rect x="608" y="284" width="272" height="76" rx="6" fill="#F4F6FA" stroke="#7A8AA6" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="624" y="306" font-size="12.5" font-weight="700" fill="#4A5B75">Contextualización y contraste</text>
+  <text x="624" y="324" font-size="11" fill="#5A6B85">Procesamiento independiente de cada</text>
+  <text x="624" y="339" font-size="11" fill="#5A6B85">fuente · benchmarking de factores ·</text>
+  <text x="624" y="354" font-size="11" fill="#5A6B85">sin unión fila a fila entre bases</text>
+
+  <!-- dashed rail down to EDA and Interpretación -->
+  <path d="M 744 360 L 744 468 L 574 468" fill="none" stroke="#7A8AA6" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#arrowDash)"/>
+  <path d="M 744 468 L 744 1008 L 574 1008" fill="none" stroke="#7A8AA6" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#arrowDash)"/>
+  <text x="762" y="740" font-size="10.5" font-style="italic" fill="#7A8AA6" transform="rotate(-90 762 740)" text-anchor="middle">Aportan evidencia de dominio, no datos de entrenamiento</text>
+
+  <!-- Governance footer -->
+  <rect x="40" y="1152" width="840" height="106" rx="6" fill="#FFFFFF" stroke="#0B2C6B" stroke-width="1.6"/>
+  <text x="56" y="1176" font-size="13" font-weight="700" fill="#0B2C6B">Capa transversal de gobernanza, reproducibilidad y protección de datos</text>
+  <text x="56" y="1198" font-size="11.5" fill="#33455F">· Repositorio Git: commits descriptivos, una rama por fase del pipeline y revisión de pares antes de integrar a <tspan font-style="italic">main</tspan></text>
+  <text x="56" y="1216" font-size="11.5" fill="#33455F">· Entorno reproducible: <tspan font-style="italic">requirements.txt</tspan>, semillas aleatorias fijas y ejecución por <tspan font-style="italic">scripts</tspan> versionados, no por celdas sueltas</text>
+  <text x="56" y="1234" font-size="11.5" fill="#33455F">· Trazabilidad del aprendizaje: bitácoras de error en <tspan font-style="italic">/docs/bitacoras/</tspan> y diccionario de variables versionado</text>
+  <text x="56" y="1252" font-size="11.5" fill="#33455F">· Protección de datos: identificadores removidos en la ingesta; los microdatos nunca se versionan en el repositorio</text>
+</svg>
